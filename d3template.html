@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+		<meta charset="utf-8">
+		<title><!-- IMPORTANT: add a title here --></title>
+		<script src="https://d3js.org/d3.v7.js"></script>
+	</head>
+
+	<body>
+		<script>
+		    const bardata = [300, 100, 150, 225, 75, 275];
+			d3.select("body").append("svg").attr("width", "400").attr("height","400")
+			const rect = d3.select("svg").selectAll("rect")
+			rect.data(bardata).enter()
+				.append("rect")
+					.attr("x", 50)
+					.attr("y", (d,i)=>i*50+50)
+					.attr("width",d=>d)
+					.attr("height",35)
+					.attr("fill","pink")
+		</script>
+	</body>
+
+</html>
